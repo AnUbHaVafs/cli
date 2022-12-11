@@ -1,10 +1,10 @@
 # Command Line Interface : Nodejs + MongoDB in GitBash
 
 First run :
-npm install
+#npm install
 
 Use for CLI :
-npm link
+#npm link
 
 Use the following commads :
 
@@ -16,8 +16,8 @@ npm run Anubhav-cli remove <_id>
 
 Use alias as given below :
 
-a : add
-f : find
-u : update
-r : remove
-l : list
+#a : add
+#f : find
+#u : update
+#r : remove
+#l : list
