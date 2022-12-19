@@ -1,15 +1,30 @@
 #!/user/bin/env mode
-const program = require('commander');
+// const program = require('commander');
+import { program } from 'commander';
 // const inquirer = require('inquirer');
-// import inquirer from 'inquirer';
-const {
+import inquirer from 'inquirer';
+// import { welcome } from './quiz.js';
+// const {
+//     addCustomer,
+//     findCustomer,
+//     updateCustomer,
+//     removeCustomer,
+//     listCustomers,
+//     isPhone
+
+// } = require('./index');
+import {
     addCustomer,
     findCustomer,
     updateCustomer,
     removeCustomer,
-    listCustomers
-} = require('./index');
+    listCustomers,
+    isPhone
 
+} from './index.js'
+
+// import * as index from './index.js'
+// console.log(index)
 const questions = [
     {
         type: 'input',
@@ -37,23 +52,23 @@ program
     .version('1.0.0')
     .description('Client Management System')
 
-program
-    .command('add <firstname> <lastname> <phone> <email>')
-    .alias('a')
-    .description('Add a customer')
-    .action((firstname, lastname, phone, email) => {
-        addCustomer({ firstname, lastname, phone, email });
-    });
-
 // program
-//     .command('add')
+//     .command('add <firstname> <lastname> <phone> <email>')
 //     .alias('a')
-//     .description('New Customer Added')
-//     .action(() => {
-//         inquirer.prompt(questions).then((answers) => {
-//             addCustomer(answers);
-//         })
-//     })
+//     .description('Add a customer')
+//     .action((firstname, lastname, phone, email) => {
+//         addCustomer({ firstname, lastname, phone, email });
+//     });
+
+program
+    .command('add')
+    .alias('a')
+    .description('New Customer Added')
+    .action(() => {
+        inquirer.prompt(questions).then((answers) => {
+            addCustomer(answers);
+        })
+    })
 
 
 program
@@ -88,4 +103,22 @@ program
     .action(() => {
         listCustomers();
     });
+
+program
+    .command('isPhone <phone>')
+    .alias('isp')
+    .description('Phone exists or not')
+    .action((phone) => {
+        isPhone(phone);
+    });
+
+// program
+//     .command('Quiz')
+//     .alias('q')
+//     .description('Starting Quiz')
+//     .action(() => {
+//         welcome();
+
+//     });
+
 program.parse(process.argv);   

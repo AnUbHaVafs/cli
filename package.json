@@ -3,16 +3,23 @@
   "version": "1.0.0",
   "description": "Customer Management CLI",
   "main": "index.js",
+  "type": "module",
   "preferGlobal": true,
   "bin": "./commands.js",
   "scripts": {
-    "Anubhav-cli": "node commands.js"
+    "Anubhav-cli": "node commands.js",
+    "quiz": "node quiz.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^5.2.0",
+    "chalk-animation": "^2.0.3",
     "commander": "^9.4.1",
+    "figlet": "^1.5.2",
+    "gradient-string": "^2.0.2",
     "inquirer": "^9.1.4",
-    "mongoose": "^6.8.0"
+    "mongoose": "^6.8.0",
+    "nanospinner": "^1.1.0"
   }
 }
